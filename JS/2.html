@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>Grade Checker</h1>
+
+
+    <script>
+
+        let input = prompt("Enter your score (0-100):");
+
+        let score = Number(input);
+        switch (true) {
+            case (score >= 90):
+                document.write("Grade A");
+                break;
+            case (score >= 80):
+                document.write("Grade : B");
+                break;
+            case (score >= 70):
+                document.write("Grade : C");
+                break;
+            default:
+                document.write("Firr se Pdoooo Ja Krrr.... Niklooooooo");
+        }
+    </script>
+</body>
+
+</html>

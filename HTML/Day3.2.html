@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideDown 0.8s ease-out 0.1s backwards;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            animation: slideDown 0.8s ease-out 0.2s backwards;
+        }
+
+        .navbar-links a:hover {
+            color: red;
+            transform: translateY(-3px);
+        }
+
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 10px;
+            column-gap: 10px;
+            border: 15px solid black;
+        }
+
+        .sclass {
+            font-size: 50px;
+            text-align: center;
+            color: red;
+            text-shadow: 2px 1px 3px maroon;
+            padding: 50px;
+            padding-top: 120px;
+            text-decoration: underline;
+            background-color: black;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            border-radius: 15%;
+        }
+
+        .child {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.8s ease-in-out, pulse 2s infinite;
+        }
+
+        .child:hover {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+        .footer-section{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+
+        .footer-link {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .footer-section h3 {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">
+            🦾 Iron-Man
+        </a>
+        <ul class="navbar-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="main">
+            <div class="child"> <img src="../IMAGES/wallpaperflare.com_wallpaper.jpg" alt=""></div>
+            <div class="child"> <img src="../IMAGES/wallpaperflare.com_wallpaper.jpg" alt=""></div>
+            <div class="child"> <img src="../IMAGES/wallpaperflare.com_wallpaper.jpg" alt=""></div>
+            <div class="child"> <img src="../IMAGES/wallpaperflare.com_wallpaper.jpg" alt=""></div>
+            <div class="child"> <img src="../IMAGES/wallpaperflare.com_wallpaper.jpg" alt=""></div>
+            <div class="child"> <img src="../IMAGES/wallpaperflare.com_wallpaper.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-section">
+            <h3>Connect</h3>
+            <ul class="footer-link">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+
+    </footer>
+</body>
+
+</html>

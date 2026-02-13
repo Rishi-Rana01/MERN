@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events - Simple Examples</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .keyword {
+            color: #c084fc;
+        }
+
+        .string {
+            color: #4ade80;
+        }
+
+        .function {
+            color: #60a5fa;
+        }
+
+        .comment {
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-white">
+
+    <!-- Header -->
+    <header class="text-center py-12 px-4">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+            JavaScript Events
+        </h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Learn how to make your web pages interactive with simple event examples
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 pb-16 space-y-12">
+
+        <!-- What are Events -->
+        <section class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <h2 class="text-3xl font-bold text-purple-300 mb-4">🎯 What are Events?</h2>
+            <p class="text-gray-300 text-lg leading-relaxed">
+                Events are actions that happen in the browser — like clicking a button, typing in a text field,
+                or moving your mouse. JavaScript lets you <strong class="text-white">listen</strong> for these events
+                and <strong class="text-white">respond</strong> to them with code.
+            </p>
+        </section>
+
+        <!-- Event 1: Click -->
+        <section class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-green-300 mb-4">1. Click Event</h2>
+            <p class="text-gray-300 mb-6">The most common event! Fires when you click an element.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Code -->
+                <div class="code-block rounded-xl p-4 text-sm overflow-x-auto">
+                    <pre><span class="comment">// HTML</span>
+&lt;<span class="keyword">button</span> <span class="function">id</span>=<span class="string">"myBtn"</span>&gt;Click Me&lt;/<span class="keyword">button</span>&gt;
+
+<span class="comment">// JavaScript</span>
+<span class="keyword">const</span> btn = document.<span class="function">getElementById</span>(<span class="string">"myBtn"</span>);
+
+btn.<span class="function">addEventListener</span>(<span class="string">"click"</span>, <span class="keyword">function</span>() {
+    <span class="function">alert</span>(<span class="string">"Button clicked!"</span>);
+});</pre>
+                </div>
+                <!-- Demo -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center justify-center">
+                    <p class="text-gray-400 mb-4">Try it:</p>
+                    <button id="clickDemo"
+                        class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+                        Click Me!
+                    </button>
+                    <p id="clickOutput" class="mt-4 text-green-400 font-semibold"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 2: Mouseover/Mouseout -->
+        <section class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-blue-300 mb-4">2. Mouse Events</h2>
+            <p class="text-gray-300 mb-6">Detect when mouse enters or leaves an element.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Code -->
+                <div class="code-block rounded-xl p-4 text-sm overflow-x-auto">
+                    <pre><span class="keyword">const</span> box = document.<span class="function">getElementById</span>(<span class="string">"box"</span>);
+
+box.<span class="function">addEventListener</span>(<span class="string">"mouseover"</span>, () => {
+    box.style.background = <span class="string">"blue"</span>;
+});
+
+box.<span class="function">addEventListener</span>(<span class="string">"mouseout"</span>, () => {
+    box.style.background = <span class="string">"gray"</span>;
+});</pre>
+                </div>
+                <!-- Demo -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center justify-center">
+                    <p class="text-gray-400 mb-4">Hover over the box:</p>
+                    <div id="hoverBox"
+                        class="w-32 h-32 bg-gray-500 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300">
+                        <span class="text-white font-bold">Hover Me</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 3: Keypress -->
+        <section class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-yellow-300 mb-4">3. Keyboard Events</h2>
+            <p class="text-gray-300 mb-6">Detect when keys are pressed on the keyboard.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Code -->
+                <div class="code-block rounded-xl p-4 text-sm overflow-x-auto">
+                    <pre><span class="keyword">const</span> input = document.<span class="function">getElementById</span>(<span class="string">"myInput"</span>);
+
+input.<span class="function">addEventListener</span>(<span class="string">"keyup"</span>, (event) => {
+    console.<span class="function">log</span>(<span class="string">"Key pressed:"</span>, event.key);
+});</pre>
+                </div>
+                <!-- Demo -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center justify-center">
+                    <p class="text-gray-400 mb-4">Type something:</p>
+                    <input id="keyInput" type="text" placeholder="Type here..."
+                        class="bg-slate-700 text-white px-4 py-3 rounded-lg w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <p class="mt-4 text-gray-400">Last key: <span id="keyOutput"
+                            class="text-yellow-400 font-bold">-</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 4: Input/Change -->
+        <section class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-pink-300 mb-4">4. Input Event</h2>
+            <p class="text-gray-300 mb-6">Fires every time the value of an input changes.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Code -->
+                <div class="code-block rounded-xl p-4 text-sm overflow-x-auto">
+                    <pre><span class="keyword">const</span> input = document.<span class="function">getElementById</span>(<span class="string">"nameInput"</span>);
+<span class="keyword">const</span> output = document.<span class="function">getElementById</span>(<span class="string">"greeting"</span>);
+
+input.<span class="function">addEventListener</span>(<span class="string">"input"</span>, (e) => {
+    output.textContent = <span class="string">"Hello, "</span> + e.target.value;
+});</pre>
+                </div>
+                <!-- Demo -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center justify-center">
+                    <p class="text-gray-400 mb-4">Enter your name:</p>
+                    <input id="nameInput" type="text" placeholder="Your name..."
+                        class="bg-slate-700 text-white px-4 py-3 rounded-lg w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <p id="greeting" class="mt-4 text-pink-400 font-bold text-xl">Hello, </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 5: Double Click -->
+        <section class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-orange-300 mb-4">5. Double Click Event</h2>
+            <p class="text-gray-300 mb-6">Fires when you double-click an element.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Code -->
+                <div class="code-block rounded-xl p-4 text-sm overflow-x-auto">
+                    <pre><span class="keyword">const</span> card = document.<span class="function">getElementById</span>(<span class="string">"card"</span>);
+
+card.<span class="function">addEventListener</span>(<span class="string">"dblclick"</span>, () => {
+    card.classList.<span class="function">toggle</span>(<span class="string">"liked"</span>);
+});</pre>
+                </div>
+                <!-- Demo -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center justify-center">
+                    <p class="text-gray-400 mb-4">Double-click to like:</p>
+                    <div id="likeCard"
+                        class="w-40 h-40 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300 shadow-lg">
+                        <span id="heart" class="text-5xl">🤍</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 6: Submit -->
+        <section class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-cyan-300 mb-4">6. Form Submit Event</h2>
+            <p class="text-gray-300 mb-6">Fires when a form is submitted. Use preventDefault() to stop page reload.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Code -->
+                <div class="code-block rounded-xl p-4 text-sm overflow-x-auto">
+                    <pre><span class="keyword">const</span> form = document.<span class="function">getElementById</span>(<span class="string">"myForm"</span>);
+
+form.<span class="function">addEventListener</span>(<span class="string">"submit"</span>, (e) => {
+    e.<span class="function">preventDefault</span>(); <span class="comment">// Stop reload</span>
+    <span class="function">alert</span>(<span class="string">"Form submitted!"</span>);
+});</pre>
+                </div>
+                <!-- Demo -->
+                <div class="bg-slate-800 rounded-xl p-6 flex flex-col items-center justify-center">
+                    <form id="demoForm" class="w-full max-w-xs">
+                        <input type="email" placeholder="Enter email..." required
+                            class="bg-slate-700 text-white px-4 py-3 rounded-lg w-full mb-3 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                        <button type="submit"
+                            class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                            Submit
+                        </button>
+                    </form>
+                    <p id="formOutput" class="mt-4 text-cyan-400 font-semibold"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section
+            class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
+            <h2 class="text-3xl font-bold text-white mb-6">📋 Quick Reference</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-black/20 rounded-lg p-4">
+                    <code class="text-green-400">click</code>
+                    <p class="text-gray-400 text-sm mt-1">Mouse click</p>
+                </div>
+                <div class="bg-black/20 rounded-lg p-4">
+                    <code class="text-blue-400">mouseover</code>
+                    <p class="text-gray-400 text-sm mt-1">Mouse enters element</p>
+                </div>
+                <div class="bg-black/20 rounded-lg p-4">
+                    <code class="text-yellow-400">keyup</code>
+                    <p class="text-gray-400 text-sm mt-1">Key is released</p>
+                </div>
+                <div class="bg-black/20 rounded-lg p-4">
+                    <code class="text-pink-400">input</code>
+                    <p class="text-gray-400 text-sm mt-1">Input value changes</p>
+                </div>
+                <div class="bg-black/20 rounded-lg p-4">
+                    <code class="text-orange-400">dblclick</code>
+                    <p class="text-gray-400 text-sm mt-1">Double click</p>
+                </div>
+                <div class="bg-black/20 rounded-lg p-4">
+                    <code class="text-cyan-400">submit</code>
+                    <p class="text-gray-400 text-sm mt-1">Form submission</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500">
+        <p>Made with ❤️ to learn JavaScript Events</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 1. Click Event
+        const clickBtn = document.getElementById('clickDemo');
+        const clickOutput = document.getElementById('clickOutput');
+        let clickCount = 0;
+
+        clickBtn.addEventListener('click', function () {
+            clickCount++;
+            clickOutput.textContent = `Clicked ${clickCount} time${clickCount > 1 ? 's' : ''}!`;
+        });
+
+        // 2. Mouse Events
+        const hoverBox = document.getElementById('hoverBox');
+
+        hoverBox.addEventListener('mouseover', function () {
+            this.style.background = 'linear-gradient(135deg, #3b82f6, #8b5cf6)';
+            this.style.transform = 'scale(1.1)';
+        });
+
+        hoverBox.addEventListener('mouseout', function () {
+            this.style.background = '#6b7280';
+            this.style.transform = 'scale(1)';
+        });
+
+        // 3. Keyboard Event
+        const keyInput = document.getElementById('keyInput');
+        const keyOutput = document.getElementById('keyOutput');
+
+        keyInput.addEventListener('keyup', function (event) {
+            keyOutput.textContent = event.key;
+        });
+
+        // 4. Input Event
+        const nameInput = document.getElementById('nameInput');
+        const greeting = document.getElementById('greeting');
+
+        nameInput.addEventListener('input', function (e) {
+            const name = e.target.value || '';
+            greeting.textContent = name ? `Hello, ${name}! 👋` : 'Hello, ';
+        });
+
+        // 5. Double Click Event
+        const likeCard = document.getElementById('likeCard');
+        const heart = document.getElementById('heart');
+        let liked = false;
+
+        likeCard.addEventListener('dblclick', function () {
+            liked = !liked;
+            heart.textContent = liked ? '❤️' : '🤍';
+            this.style.transform = liked ? 'scale(1.1)' : 'scale(1)';
+        });
+
+        // 6. Form Submit Event
+        const demoForm = document.getElementById('demoForm');
+        const formOutput = document.getElementById('formOutput');
+
+        demoForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            formOutput.textContent = `✓ Submitted: ${email}`;
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        .main{
+            height: 450px;
+            width: 650px;
+            background-color: brown;
+            margin: 400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+            border: 2px solid black;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: black;
+        }
+        .box:hover{
+            transform: rotate(360deg);
+            border-radius: 50%;
+            background-color: palevioletred;
+            transition: all 2s ease-in-out 0.5s;
+            box-shadow: 60px 52px 56px black;
+        }
+        
+    </Style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+    
+</body>
+</html>

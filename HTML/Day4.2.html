@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 450px;
+            width: 650px;
+            background-color: brown;
+            margin: 400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+            border: 2px solid black;
+        }
+        
+        img{
+            height: 250px;
+            width: 250px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .img1{
+            overflow: hidden;
+        }
+        .img2{
+            overflow: hidden;
+        }
+        img:hover{
+            transform: scale(2);
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="content img1">
+            <img src="../IMAGES/wallpaperflare.com_wallpaper.jpg" alt="">
+        </div>
+        <div class="content img2">
+            <img src="../IMAGES/GROOT.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

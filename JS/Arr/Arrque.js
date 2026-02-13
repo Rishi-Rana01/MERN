@@ -3,6 +3,7 @@
 // let largest= -Infinity;
 // let secL= -Infinity;
 
+
 // for(let n = 0; n<arr.length; n++)
 // {
 //     if(arr[n]>largest)
@@ -19,7 +20,7 @@
 
 
 // Remove Duplicates
-let arr = [1, 2, 3, 2, 4, 3]
+let arr = [1, 2, 3, 2, 4, 3];
 
 for (let n = 0; n < arr.length; n++) {
     for (let m = n + 1; m < arr.length; m++) {
@@ -27,6 +28,6 @@ for (let n = 0; n < arr.length; n++) {
             arr.splice(m, 1);
             m--;
         }
-        
-
     }
+}
+console.log(arr);

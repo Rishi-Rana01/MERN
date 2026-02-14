@@ -20,14 +20,34 @@
 
 
 // Remove Duplicates
-let arr = [1, 2, 3, 2, 4, 3];
+// let arr = [1, 2, 3, 2, 4, 3];
 
-for (let n = 0; n < arr.length; n++) {
-    for (let m = n + 1; m < arr.length; m++) {
-        if (arr[n] === arr[m]) {
-            arr.splice(m, 1);
-            m--;
-        }
-    }
-}
-console.log(arr);
+// for (let n = 0; n < arr.length; n++) {
+//     for (let m = n + 1; m < arr.length; m++) {
+//         if (arr[n] === arr[m]) {
+//             arr.splice(m, 1);
+//             m--;
+//         }
+//     }
+// }
+// console.log(arr);
+
+
+//PALLINDROME USING TWO POINTERS ARRAY
+
+// let array= [1,2,3,2,1];
+// let left=0;
+// let right=array.length-1;
+// let isPalindrome=true;
+
+// while(left<right)
+// {
+//     if(array[left]!==array[right])
+//     {
+//         isPalindrome=false;
+//         break;
+//     }
+//     left++;
+//     right--;
+// }
+// console.log(isPalindrome);

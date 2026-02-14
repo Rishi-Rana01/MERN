@@ -51,3 +51,26 @@
 //     right--;
 // }
 // console.log(isPalindrome);
+
+
+//odd even no in array
+
+// let arr=[1,2,3,4,5,6];
+// let odd=[];
+// let even=[];
+
+// for(let n=0; n<arr.length; n++)
+// {
+//     if(arr[n]%2===0)
+//     {
+//         even.push(arr[n]);
+//     }
+//     else
+//     {
+//         odd.push(arr[n]);
+//     }
+// }
+// console.log("Even numbers: ", even);
+// console.log("Odd numbers: ", odd);
+
+//Prime numbers in array

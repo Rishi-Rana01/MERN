@@ -74,3 +74,29 @@
 // console.log("Odd numbers: ", odd);
 
 //Prime numbers in array
+let arr=[1,2,3,4,5,6,7,8,9,10];
+let prime=[];
+
+for(let n=0; n<arr.length; n++)  {
+    let isPrime=true;
+    if(arr[n]<2)
+    {
+        isPrime=false;
+    }
+    else
+    {
+        for(let i=2; i<=Math.sqrt(arr[n]); i++)
+        {
+            if(arr[n]%i===0)
+            {
+                isPrime=false;
+                break;
+            }
+        }
+    }
+    if(isPrime)
+    {
+        prime.push(arr[n]);
+    }
+}
+console.log(prime);

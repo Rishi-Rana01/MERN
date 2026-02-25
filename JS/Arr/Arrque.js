@@ -74,29 +74,49 @@
 // console.log("Odd numbers: ", odd);
 
 //Prime numbers in array
-let arr=[1,2,3,4,5,6,7,8,9,10];
-let prime=[];
+// let arr=[1,2,3,4,5,6,7,8,9,10];
+// let prime=[];
 
-for(let n=0; n<arr.length; n++)  {
-    let isPrime=true;
-    if(arr[n]<2)
-    {
-        isPrime=false;
+// for(let n=0; n<arr.length; n++)  {
+//     let isPrime=true;
+//     if(arr[n]<2)
+//     {
+//         isPrime=false;
+//     }
+//     else
+//     {
+//         for(let i=2; i<=Math.sqrt(arr[n]); i++)
+//         {
+//             if(arr[n]%i===0)
+//             {
+//                 isPrime=false;
+//                 break;
+//             }
+//         }
+//     }
+//     if(isPrime)
+//     {
+//         prime.push(arr[n]);
+//     }
+// }
+// console.log(prime);
+
+//Pallindrome
+
+let str = [1,3,1];
+
+let left= 0;
+let right =str.length-1;
+
+let isPallindrome= true;
+
+while(left<right){
+
+    if (str[left] !== str[right]) {
+        isPallindrome = false;
+        break;   
     }
-    else
-    {
-        for(let i=2; i<=Math.sqrt(arr[n]); i++)
-        {
-            if(arr[n]%i===0)
-            {
-                isPrime=false;
-                break;
-            }
-        }
-    }
-    if(isPrime)
-    {
-        prime.push(arr[n]);
-    }
+    left++;
+    right--;
 }
-console.log(prime);
+console.log(isPallindrome )
